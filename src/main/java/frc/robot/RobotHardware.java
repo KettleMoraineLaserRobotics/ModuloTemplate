@@ -7,18 +7,11 @@ import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
-import frc.robot.generated.TunerConstants;
-import frc.robot.subsystems.ChangeCentricity;
-import frc.robot.subsystems.CommandSwerveDrivetrain;
-
 
 
 public class RobotHardware{
 
     private static RobotHardware instance = null;
-    public static CommandSwerveDrivetrain drivetrain = null;
-    public static ChangeCentricity changeCentricity = null;
-
 
     static final boolean LEFT_INVERSION_STATUS = false;
 
@@ -57,9 +50,6 @@ public class RobotHardware{
         speedLimiterDrive = 0.2f;
         speedLimiterSpin = 1.0f;
 
-        //Drive train
-        drivetrain = TunerConstants.createDrivetrain();
-        changeCentricity = new ChangeCentricity();
 
 
         //Example of one mechanism using two motors at once
