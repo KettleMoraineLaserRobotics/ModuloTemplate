@@ -6,22 +6,39 @@ import edu.wpi.first.math.util.Units;
 
 public class Constants {
     public static final class DriveConstants {
-        // Chassis configuration
-        public static final double kTrackWidth = Units.inchesToMeters(26.5);
-        // Distance between centers of right and left wheels on robot
-        public static final double kWheelBase = Units.inchesToMeters(26.5);
-        // Distance between front and back wheels on robot
-        public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
-            new Translation2d(kWheelBase / 2, kTrackWidth / 2),
-            new Translation2d(kWheelBase / 2, -kTrackWidth / 2),
-            new Translation2d(-kWheelBase / 2, kTrackWidth / 2),
-            new Translation2d(-kWheelBase / 2, -kTrackWidth / 2));
+      // Driving Parameters - Note that these are not the maximum capable speeds of
+      // the robot, rather the allowed maximum speeds
+      public static final double kMaxSpeedMetersPerSecond = 4.8;
+      public static final double kMaxAngularSpeed = 2 * Math.PI; // radians per second
+      // Chassis configuration
+      public static final double kTrackWidth = Units.inchesToMeters(26.5);
+      // Distance between centers of right and left wheels on robot
+      public static final double kWheelBase = Units.inchesToMeters(26.5);
+      // Distance between front and back wheels on robot
+      public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
+          new Translation2d(kWheelBase / 2, kTrackWidth / 2),
+          new Translation2d(kWheelBase / 2, -kTrackWidth / 2),
+          new Translation2d(-kWheelBase / 2, kTrackWidth / 2),
+          new Translation2d(-kWheelBase / 2, -kTrackWidth / 2));
 
-            // Angular offsets of the modules relative to the chassis in radians
-           public static final double kFrontLeftChassisAngularOffset = -Math.PI / 2;
-           public static final double kFrontRightChassisAngularOffset = 0;
-           public static final double kBackLeftChassisAngularOffset = Math.PI;
-           public static final double kBackRightChassisAngularOffset = Math.PI / 2;
+          // Angular offsets of the modules relative to the chassis in radians
+          public static final double kFrontLeftChassisAngularOffset = -Math.PI / 2;
+          public static final double kFrontRightChassisAngularOffset = 0;
+          public static final double kBackLeftChassisAngularOffset = Math.PI;
+          public static final double kBackRightChassisAngularOffset = Math.PI / 2;
+
+          // SPARK MAX CAN IDs
+          public static final int frontLeftDriveCANID = 0;
+          public static final int backLeftDriveCANID = 0;
+          public static final int frontRightDriveCANID = 0;
+          public static final int backRightDriveCANID = 0;
+
+          public static final int frontLeftSteerCANID = 0;
+          public static final int backLeftSteerCANID = 0;
+          public static final int frontRightSteerCANID = 0;
+          public static final int backRightSteerCANID = 0;
+
+          public static final boolean kGyroReversed = false;
     }
 
     public static final class ModuleConstants {
