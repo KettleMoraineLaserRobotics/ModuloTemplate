@@ -6,24 +6,15 @@ package frc.robot;
 
 import java.util.Random;
 
-import com.revrobotics.spark.SparkMax;
-
-import edu.wpi.first.cameraserver.CameraServer;
-import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.util.sendable.Sendable;
-import edu.wpi.first.util.sendable.SendableBuilder;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 
 
 public class Robot extends TimedRobot {
+  @SuppressWarnings("unused")
   private DriveStation driveStation;
   private RobotHardware hardware;
   double voltage = RobotController.getBatteryVoltage();
@@ -36,59 +27,43 @@ public class Robot extends TimedRobot {
   @Override public void robotInit() {
     hardware = new RobotHardware();
     driveStation = new DriveStation(hardware);
-
   }
 
-  public Robot() {
-    
-  }
+  public Robot() {}
 
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run(); 
+
     voltage = RobotController.getBatteryVoltage();
-    // Do this in either robot periodic or subsystem periodic
-    
     SmartDashboard.putNumber("Battery Voltage", voltage);
 
   }
 
 
   @Override
-  public void disabledInit() {
-  
-  }
+  public void disabledInit() {}
 
   @Override
-  public void disabledPeriodic() {
-  
-  }
+  public void disabledPeriodic() {}
 
   @Override
   public void disabledExit() {}
 
   @Override
-  public void autonomousInit() {
-  }
+  public void autonomousInit() {}
 
   @Override
-  public void autonomousPeriodic() {
-
-  }
+  public void autonomousPeriodic() {}
 
   @Override
-  public void autonomousExit() { 
-
-  }
+  public void autonomousExit() {}
 
   @Override
-  public void teleopInit() {
-
-  }
+  public void teleopInit() {}
 
   @Override
-  public void teleopPeriodic() {
-  }
+  public void teleopPeriodic() {}
 
   @Override
   public void teleopExit() {}

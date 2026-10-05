@@ -4,6 +4,9 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.util.Units;
 
+/**
+ * This is a class that holds all constants for the robot
+ */
 public class Constants {
     public static final class DriveConstants {
       // Driving Parameters - Note that these are not the maximum capable speeds of
