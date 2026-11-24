@@ -77,7 +77,7 @@ public class SwerveModule {
     /**
      * Sets the desired state for the module.
      *
-     * @param desiredState Desired state with speed and angle.
+     * @param desieredState Desired state with speed and angle.
      */
     public void setDesiredState(SwerveModuleState desieredState){
         // Apply chassis angular offset to the desired state.
@@ -90,6 +90,7 @@ public class SwerveModule {
 
         // Command driving and turning SPARKS towards their respective setpoints.
         drivingClosedLoopController.setSetpoint(correctedDesiredState.speedMetersPerSecond, ControlType.kVelocity);
+        System.out.println(correctedDesiredState.angle.getDegrees());
         steeringClosedLoopController.setSetpoint(correctedDesiredState.angle.getRadians(), ControlType.kPosition);
 
         this.desiredState = desieredState;
